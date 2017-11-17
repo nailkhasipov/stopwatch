@@ -11,7 +11,13 @@
   <div class="stopwatch">
     <h1>Stopwatch</h1>
     <span id="timer">00:00:00</span>
-    <div class="actions" id="actions"></div>
+    <div class="actions">
+      <button onclick="stopwatch.reset()" id="resetButton" class="hidden">Reset</button>
+      <button onclick="stopwatch.lap()" id="lapButton" class="disable">Lap</button>
+      <button onclick="stopwatch.stop()" id="stopButton" class="hidden">Stop</button>
+      <button onclick="stopwatch.start()" id="startButton">Start</button>
+    </div>
+    <ul id="results"></ul>
   </div>
   <script src="main.js"></script>
 </body>
