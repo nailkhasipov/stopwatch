@@ -1,16 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: Menlo;
 }
 
 .stopwatch {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   width: 300px;
   height: 420px;
   border: 1px solid;
   margin: 100px auto;
-  padding: 30px 30px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 h1 {
@@ -19,8 +29,9 @@ h1 {
   margin: 0;
 }
 
-span {
-  font-size: 48px;
+span.timer {
+  margin: auto;
+  font-size: 54px;
   text-align: center;
   width: 100%;
 }
@@ -32,11 +43,11 @@ span {
 }
 
 button {
-  width: 140px;
-  height: 50px;
+  width: 48%;
+  height: 40px;
   background: #222;
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   font-family: Menlo;
   border: none;
   cursor: pointer;
@@ -55,6 +66,27 @@ ul {
   list-style: none;
   padding-left: 0;
   width: 100%;
-  height: 65px;
+  height: 110px;
   overflow: scroll;
+  margin-top: 10px;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  line-height: 30px;
+  border-top: 1px solid #222;
+}
+
+@media (max-width: 400px) {
+  .stopwatch {
+    margin: 0 auto;
+    border: none;
+    height: 100%;
+    width: 100%;
+  }
+
+  span.timer {
+    font-size: 18vw;
+  }
 }

@@ -1,4 +1,4 @@
-var Stopwatch = function(config) {
+function Stopwatch (config) {
   this.running = false;
   this.time = null;
   this.timestamp = null;
@@ -42,9 +42,15 @@ Stopwatch.prototype.reset = function() {
 Stopwatch.prototype.lap = function() {
   if (!this.time)
     return;
+  let results = document.getElementsByTagName('li');
   let li = document.createElement('li');
-  li.innerText = this.format();
-  this.results.appendChild(li);
+  li.innerHTML = `<span>Lap ${results.length + 1}</span><span>${this.format()}</span>`;
+  if (results.length == 0) {
+    this.results.appendChild(li);
+  } else {
+    this.results.insertBefore(li, results[0]);
+  }
+  
 }
 
 Stopwatch.prototype.step = function() {
